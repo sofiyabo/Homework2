@@ -1,32 +1,36 @@
 // Programr clase reloj que tiene varias funcionalidades
 
+#include "Reloj.hpp"
+#include "Reloj.cpp"
+
 #include <iostream>
 #include <iomanip>
 
-class Reloj{
-public: //variables a las que se pueden acceder por fuera de la declaracion de la clase
-    int segundos, minutos, horas;
-    bool am;
-
-   Reloj(int SS = 0, int MM = 0, int HH = 0, bool AM = true){
-    segundos = SS;
-    minutos = MM;
-    if(HH > 12 && AM == false){
-        //cambiar a que sea menor a 12
-    }
-    
-    }
-
-   void imprimir(){
-    std::cout << horas << "h, " << minutos << "m, " << segundos << "s "<< "\n" <<std::endl;
-   }
-
-
-};
 
 int main(){
-    Reloj cont;
-    cont.imprimir();
+    //1.a
+    Reloj tiempo_a;
+    tiempo_a.imprimir();
+
+    //1.b
+    Reloj tiempo_b(4);
+    tiempo_b.imprimir();
+
+    //1.c
+    Reloj tiempo_c(5, 35);
+    tiempo_c.imprimir();
+
+    //1.d
+    Reloj tiempo_d(7, 50, 45);
+    tiempo_d.imprimir();
+
+    //1.e
+    Reloj tiempo_e(9, 30, 21, "p.m");
+    tiempo_e.imprimir();
+
+    //1.f
+    Reloj tiempo_f(30);
+    //COMPLETAR
 
     return 0;
 }
