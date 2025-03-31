@@ -16,7 +16,7 @@ void Reloj::imprimir() const{
     std::cout << std::setfill('0') << std::setw(2) << horas << "h, ";
     std::cout << std::setfill('0') << std::setw(2) << minutos << "m, ";
     std::cout << std::setfill('0') << std::setw(2) << segundos << "s ";
-    std::cout << formato << "\n" << std::endl;
+    std::cout << formato << std::endl;
 }
 
 void Reloj::imprimir_24hs() const{

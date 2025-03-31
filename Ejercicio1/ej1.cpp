@@ -29,8 +29,37 @@ int main(){
     tiempo_e.imprimir();
 
     //1.f
-    Reloj tiempo_f(30);
+    //Reloj tiempo_f(30);
     //COMPLETAR
 
+    //1.i
+    Reloj tiempo_i;
+    int hh, mm, ss;
+    std::string formato;
+
+    while(true){
+        try{
+            std::cout << "Introduzca las horas (0 - 12): ";
+            std::cin >> hh;
+            tiempo_i.set_horas(hh);
+    
+            std::cout << "Introduce los minutos (0-59): ";
+            std::cin >> mm;
+            tiempo_i.set_minutos(mm);
+    
+            std::cout << "Introduce los segundos (0-59): ";
+            std::cin >> ss;
+            tiempo_i.set_segundos(ss);
+    
+            std::cout << "Introduce el formato (a.m. o p.m.): ";
+            std::cin >> formato;
+            tiempo_i.set_formato(formato);
+        } catch (const std::exception& e){
+            std::cout << "Error " << e.what() << std::endl;
+        }
+    }
+    
     return 0;
 }
+
+//HACER LOS DOS MENUES; como se quiere inicializar y el de modificaciones
