@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Estudiante.hpp"
 #include <iostream>
 #include <vector>
@@ -8,11 +10,11 @@ class Curso
 {
 private:
      std::vector<std::shared_ptr<Estudiante>> lista_estudiantes;
-     int cantidad_estudiantes;
+     const int CAPACIDAD_MAXIMA = 20;
     
 public:
     Curso();
-    void inscribir_estudiante(Estudiante);
+    void inscribir_estudiante(std::shared_ptr<Estudiante>&);
     void desincribir_estudiante(int num_legajo);
     void buscar_estudiante(int num_legajo);
     void capacidad_curso();
