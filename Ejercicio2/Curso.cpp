@@ -13,14 +13,14 @@ void Curso::inscribir_estudiante(std::shared_ptr<Estudiante>& alumno){
         lista_estudiantes.push_back(alumno);
     }
 
-};
+}
 
 void Curso::desincribir_estudiante(int num_legajo){
     
     for(int i = 0; i<lista_estudiantes.size(); i++){
         Estudiante& estudiante = *lista_estudiantes[i];
         if(estudiante.legajo == num_legajo){
-
+            lista_estudiantes.erase(lista_estudiantes[i]);
         }
 
     }
