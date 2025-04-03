@@ -3,7 +3,7 @@
 
 //metodo virtual: puede tener una implementacion en la clase base.
 //no es obligatorio sobreescribirlo en la clase base.
-
+#pragma once
 #include <iostream>
 
 //EXPLICAR MEJOR LOS ACCESOS

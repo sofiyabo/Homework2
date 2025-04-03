@@ -24,5 +24,4 @@ float Estudiante::promedio_general(){
     float promedio = suma_notas/cantidad_materias;
     return promedio;
     
-
 }
