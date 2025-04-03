@@ -4,6 +4,8 @@ Curso::Curso(){
 
 };
 
+//Si uso punteros a objetos se usan -> en vez de .
+
 
 void Curso::inscribir_estudiante(std::shared_ptr<Estudiante>& alumno){
     if(lista_estudiantes.size() == CAPACIDAD_MAXIMA){
