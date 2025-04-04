@@ -7,5 +7,9 @@ int main(){
     cuenta_corriente.mostrarInfo();
     cuenta_corriente.retirar(2000);
     cuenta_corriente.mostrarInfo();
+    cuenta_ahorro.depositar(50);
+    cuenta_ahorro.mostrarInfo();
+    cuenta_ahorro.mostrarInfo();
+    cuenta_ahorro.mostrarInfo();
 
 }

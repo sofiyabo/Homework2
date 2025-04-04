@@ -13,13 +13,13 @@ private:
      const int CAPACIDAD_MAXIMA = 20;
     
 public:
-    Curso();
+    Curso() = default;
     void inscribir_estudiante(std::shared_ptr<Estudiante>&);
     void desincribir_estudiante(int num_legajo);
     void buscar_estudiante(int num_legajo);
     void capacidad_curso();
     void imprimir_orden_alfabetico();
-    //Copia objeto curso
+    Curso copia_curso() const; //conviene metodo o constructor???
 
 };
 

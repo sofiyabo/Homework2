@@ -1,14 +1,12 @@
 #include "Curso.hpp"
+#include <algorithm>
 
-Curso::Curso(){
-
-};
 
 //Si uso punteros a objetos se usan -> en vez de .
 
 
 void Curso::inscribir_estudiante(std::shared_ptr<Estudiante>& alumno){
-    if(lista_estudiantes.size() == CAPACIDAD_MAXIMA){
+    if(lista_estudiantes.size() == static_cast<size_t>(CAPACIDAD_MAXIMA)){
         std::cout<< "No se puede agregar al estudiante porque el curso esta completo."<< std::endl;
     }
     else{
@@ -43,7 +41,7 @@ void Curso::buscar_estudiante(int num_legajo){
 
 };
 void Curso::capacidad_curso(){
-    if(lista_estudiantes.size() < CAPACIDAD_MAXIMA){
+    if(lista_estudiantes.size() < static_cast<size_t>(CAPACIDAD_MAXIMA)){
         std::cout << "El curso no esta completo" << std::endl;
     }
     else{
@@ -51,6 +49,23 @@ void Curso::capacidad_curso(){
     }
 };
 
-void Curso::imprimir_orden_alfabetico(){
 
-};
+void Curso::imprimir_orden_alfabetico(){
+    std::vector<std::shared_ptr<Estudiante>> copia = lista_estudiantes;
+
+    std::sort(lista_estudiantes.begin(), lista_estudiantes.end(), [](const std::shared_ptr<Estudiante>& alumno1, const std::shared_ptr<Estudiante>& alumno2) {
+        return *alumno1 < *alumno2;  // Compara los estudiantes con la sobrecarga de <
+        });
+    
+    for (const auto& estudiante : lista_estudiantes) {
+        std::cout << *estudiante << std::endl;  // Usa operator<<
+    }
+}
+
+Curso Curso::copia_curso() const{
+    // Hago una copia del curso donde los punteros de los estudiantes apuntan a la misma direccion de memoria 
+    // que el curso original, asi no se duplican objetos estudiantes sin necesidad. 
+    Curso copia;
+    copia.lista_estudiantes = lista_estudiantes;
+    return copia;
+}
