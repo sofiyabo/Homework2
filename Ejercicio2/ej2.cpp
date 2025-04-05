@@ -1,6 +1,8 @@
 #include "Estudiante.hpp"
 #include "Curso.hpp"
 
+//La relacion entre Curso y Estudiantes es de agregacion ya que el Curso contiene objetos tipo Estudiantes
+
 int main(){
     Curso curso1;
     std::shared_ptr<Estudiante> alumno1 = std::make_shared<Estudiante>("Carlos", 45, std::vector<std::pair<std::string, float>>{{"Matematica", 5}, {"Lengua", 6}});
