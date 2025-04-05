@@ -2,9 +2,6 @@
 #include <algorithm>
 
 
-//Si uso punteros a objetos se usan -> en vez de .
-
-
 void Curso::inscribir_estudiante(std::shared_ptr<Estudiante>& alumno){
     if(lista_estudiantes.size() == static_cast<size_t>(CAPACIDAD_MAXIMA)){
         std::cout<< "No se puede agregar al estudiante porque el curso esta completo."<< std::endl;
@@ -37,7 +34,7 @@ void Curso::buscar_estudiante(int num_legajo){
             return;
         }
     }
-    std::cout <<"El estudiante se encuentra inscripto"<<std::endl;
+    std::cout <<"El estudiante no se encuentra inscripto"<<std::endl;
 
 };
 void Curso::capacidad_curso(){
@@ -58,7 +55,7 @@ void Curso::imprimir_orden_alfabetico(){
         });
     
     for (const auto& estudiante : lista_estudiantes) {
-        std::cout << *estudiante << std::endl;  // Usa operator<<
+        std::cout << *estudiante << std::endl;  // Usa operator<< sobrecargado
     }
 }
 
@@ -68,4 +65,6 @@ Curso Curso::copia_curso() const{
     Curso copia;
     copia.lista_estudiantes = lista_estudiantes;
     return copia;
+    // Lo que hago es crear otro objeto de tipo curso que contenga el mismo vector de estudiantes
+    // con los punteros apuntando a los objetos originales
 }

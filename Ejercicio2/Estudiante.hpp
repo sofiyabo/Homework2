@@ -10,7 +10,7 @@ class Estudiante
     public:
         std::string nombre;
         int legajo;
-        std::vector<std::pair<std::string, float>> lista_cursos; //la lista contiene un vector por materia, con el nombre de la materia y la nota final
+        std::vector<std::pair<std::string, float>> lista_cursos; //la lista contiene un par por materia, con el nombre de la materia y la nota final
 
         Estudiante(std::string nombre_alumno, int numero_legajo, std::vector<std::pair<std::string, float>> lista_materias);
         void mostrar_nombre();

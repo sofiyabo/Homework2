@@ -5,7 +5,6 @@
 #include <vector>
 #include <memory>
 
-//Capacidad maxima de estudiantes es 20
 class Curso
 {
 private:
@@ -19,7 +18,7 @@ public:
     void buscar_estudiante(int num_legajo);
     void capacidad_curso();
     void imprimir_orden_alfabetico();
-    Curso copia_curso() const; //conviene metodo o constructor???
+    Curso copia_curso() const; 
 
 };
 
